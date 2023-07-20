@@ -1,4 +1,4 @@
-FROM repo.intranet.pags/base-images/java:17-centos7
+FROM openjdk:17-jdk-slim
 
 MAINTAINER alefe-lenora-dev
 

@@ -1,0 +1,19 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: github-actions-poc-ingress
+  namespace: github-actions-poc
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: github-actions-poc.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: github-actions-poc-service
+                port:
+                  number: 80

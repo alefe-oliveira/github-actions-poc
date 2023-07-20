@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "a61f1cc5-ff17-4939-8a6e-1768f6ef63ab",
+		"name": "github-actions-poc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5026695"
+	},
+	"item": [
+		{
+			"name": "hello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response Code: \" + pm.response.code] = true;",
+							"tests[\"[INFO] Response Body: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://github-actions-poc.local/hello",
+					"protocol": "http",
+					"host": [
+						"github-actions-poc",
+						"local"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
