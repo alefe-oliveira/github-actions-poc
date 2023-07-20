@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-actions-poc-app
+  namespace: github-actions-poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-actions-poc-app
+  template:
+    metadata:
+      labels:
+        app: github-actions-poc-app
+    spec:
+      containers:
+        - name: app
+          image: aleferod/github-actions-poc:development
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 80
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: "350m"
+              memory: "5000Mi"
+            requests:
+              cpu: "150m"
+              memory: "2500Mi"
