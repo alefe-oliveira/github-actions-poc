@@ -41,6 +41,43 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"tests[\"[INFO] Request: \" + JSON.stringify(request)] = true;",
+							"tests[\"[INFO] Response Code: \" + pm.response.code] = true;",
+							"tests[\"[INFO] Response Body: \" + responseBody] = true;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://github-actions-poc.local/hello/test",
+					"protocol": "http",
+					"host": [
+						"github-actions-poc",
+						"local"
+					],
+					"path": [
+						"hello",
+						"test"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
