@@ -9,4 +9,7 @@ class HelloController {
     @Get
     fun getHello() : String = "Hello from Micronaut App"
 
+    @Get("/teste")
+    fun getTest() = "Teste"
+
 }
