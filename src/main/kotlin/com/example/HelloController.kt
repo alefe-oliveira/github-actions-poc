@@ -7,6 +7,6 @@ import io.micronaut.http.annotation.Get
 class HelloController {
 
     @Get
-    fun getHello() : String = "Hello from Micronaut App"
+    fun getHello() : String = "Hello from Micronaut App - Tech Share Pags"
 
 }
